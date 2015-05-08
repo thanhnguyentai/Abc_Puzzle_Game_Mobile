@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Puzzle Game</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <link href="css/jquery-ui.min.css" type="text/css" media="all" rel="stylesheet" />
+        <link href="css/styles.css" type="text/css" media="all" rel="stylesheet" />
+        <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+        <script type="text/javascript" src="js/buzz.min.js"></script>
+        <!-- third party library -->
+        <script type="text/javascript" src="js/AnimationBase.js"></script>
+        <script type="text/javascript" src="js/PreloadImage.js"></script>
+        <script type="text/javascript" src="js/Loading.js"></script>
+        <script type="text/javascript" src="js/Utils.js"></script>
+        
+        <!-- game -->
+        <script type="text/javascript" src="js/GameData.js"></script>
+        <script type="text/javascript" src="js/BirdFlying.js"></script>
+        <script type="text/javascript" src="js/SpritePlay.js"></script>
+        <script type="text/javascript" src="js/SpriteAnimation.js"></script>
+        <script type="text/javascript" src="js/CamelMoving.js"></script>
+        <script type="text/javascript" src="js/SceneStart.js"></script>
+        <script type="text/javascript" src="js/SceneHome.js"></script>
+        <script type="text/javascript" src="js/ScenePlay.js"></script>
+        <script type="text/javascript" src="js/Main.js"></script>
+    </head>
+    <body>
+        <div class="wrapper" id="wrapper">
+            <div id="SceneStart" class="scene-start">
+                <div id="iconStart" class="icon-start"></div>
+            </div>
+            <div id="loading_container" class="loading-container">
+                <div id="loading_running" class="loading-running"></div>
+            </div>
+            <div id="SceneSplash" class="scene-splash">
+            </div>
+            <div id="SceneHome" class="scene-home">
+                <div id="gameStartScreen" class="blur-screen">
+                    <div id="bgSoundButton" class="button bgsound-button">
+                    </div>
+                    
+                    <div id="playButton" class="button play-button">
+                    </div>
+                </div>
+                <div id="gameLevelScreen" class="blur-screen blur-hide">
+                    <div id="levelMenuButton" class="button level-menu-button" style="display: none;">
+                    </div>
+                    <div id="level1Button" class="button level1-button level-button"></div>
+                    <div id="level2Button" class="button level2-button nonactive-level-button level-button"></div>
+                    <div id="level3Button" class="button level3-button nonactive-level-button level-button"></div>
+                    <div id="level4Button" class="button level4-button nonactive-level-button level-button"></div>
+                    <div id="level5Button" class="button level5-button nonactive-level-button level-button"></div>
+                </div>
+                <div id="gameLetterList" class="blur-hide blur-screen">
+                    <div id="gameLetterListContainer" class="game-letter-list-container">
+                    </div>
+                </div>
+                <div id="gameFinishScreen" class="blur-screen blur-hide">
+                    <div id="finishStar" class="finish-star"></div>
+                    <div id="finishText" class="finish-text"></div>
+                    <div id="finishMenu" class="finish-menu button"></div>
+                    <div id="finishReplay" class="finish-replay button"></div>
+                    <div id="finishNextLevel" class="finish-next-level button"></div>
+                </div>
+                
+                <div id="levelMenuButton2" class="button level-menu-button">
+                </div>
+                <div id="textPoint" class="text-point">
+                </div>
+                <div id="bgSoundButton2" class="button bgsound-button">
+                </div>
+                
+                </canvas>
+                <canvas id="homeGoat2" class="home-goat2 resize-item" width="200" height="150">
+                </canvas>
+                <div id="homeHouse" class="home-house resize-item">
+                </div>
+                <canvas id="homeWomanUtensil" class="home-woman-utensil resize-item" width="712" height="720">
+                </canvas>
+                <canvas id="homeWomanBaby" class="home-woman-baby resize-item" width="712" height="833">
+                </canvas>
+                <canvas id="homeCamelBaby" class="home-camel-baby resize-item" width="712" height="720">
+                </canvas>
+                <canvas id="homeSheep" class="home-sheep resize-item" width="572" height="378">
+                </canvas>
+                <canvas id="homeGoat" class="home-goat resize-item" width="712" height="600">
+                </canvas>
+                
+                <div id="gameBoard"  class="game-board resize-item">
+                    <div id="playBoard" class="play-board">
+                        <canvas id="birdAnimation" class="bird-animation" width="390" height="425"></canvas>
+                        <div id="playBoardImageContainer" class="play-board-image-container">
+                            <div id="playBoardImage" class="play-board-image"></div>
+                        </div>
+                        <canvas id="gameAnimation" class="home-game-animation" width="550" height="550">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

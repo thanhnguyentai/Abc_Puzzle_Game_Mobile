@@ -1,0 +1,691 @@
+body{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Game container*/
+.wrapper{
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+/*  Loading  */
+.loading-container{
+    width: 60%;
+    height: 30px;
+    background: #ccc;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    overflow: hidden;
+    z-index: 100;
+    display: none;
+}
+.loading-running{
+    height: 30px;
+    width: 0%;
+    border-radius: 15px 0 0 15px;
+    -webkit-border-radius: 15px 0 0 15px;
+    -moz-border-radius: 15px 0 0 15px;
+    -ms-border-radius: 15px 0 0 15px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: #ffa200;
+}
+
+/* Scene Splash */
+.scene-splash{
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    overflow: hidden;
+    
+    background: url('../images/splash.jpg') no-repeat center center;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
+}
+
+/* Scene Home*/
+.scene-home{
+    opacity: 0;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow: hidden;
+    
+    background: url('../images/background.jpg') no-repeat center center;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
+}
+.home-camel-man{
+    position: absolute;
+    bottom: 42%;
+    left: 0;
+    /*background: url('../images/Camels_and_man/Camels_Man0001.png') no-repeat center center;*/
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
+    
+    transform-origin: 0% 100%;
+    -webkit-transform-origin: 0% 100%;
+    -moz-transform-origin: 0% 100%;
+    -ms-transform-origin: 0% 100%;
+}
+.home-camel-man2{
+    width: 1280px;
+    height: 720px;
+    position: absolute;
+    bottom: 42%;
+    left: 100%;
+    opacity: 0;
+    background: url('../images/Camels_and_man/Camels_Man0001.png') no-repeat center center;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
+    
+    transform-origin: 0% 100%;
+    -webkit-transform-origin: 0% 100%;
+    -moz-transform-origin: 0% 100%;
+    -ms-transform-origin: 0% 100%;
+}
+.home-house{
+    width: 624px;
+    height: 645px;
+    position: absolute;
+    bottom: 39%;
+    left: 2.7%;
+    background: url('../images/house2.png') no-repeat center center;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
+    
+    transform-origin: 0% 100%;
+    -webkit-transform-origin: 0% 100%;
+    -moz-transform-origin: 0% 100%;
+    -ms-transform-origin: 0% 100%;
+}
+.home-woman-baby{
+    width: 712px;
+    height: 833px;
+    /*background: url('../images/Woman_with_baby/Woman_baby0001.png') no-repeat center center;*/
+    position:absolute;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
+    
+    transform-origin: 0% 100%;
+    -webkit-transform-origin: 0% 100%;
+    -moz-transform-origin: 0% 100%;
+    -ms-transform-origin: 0% 100%;
+    bottom: 15.42%;
+    left: 0px;
+}
+.home-woman-utensil{
+    width: 712px;
+    height: 720px;
+    /*background: url('../images/Woman_Utensils/Woman_Utensils0001.png') no-repeat center center;*/
+    position:absolute;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
+    
+    transform-origin: 0% 100%;
+    -webkit-transform-origin: 0% 100%;
+    -moz-transform-origin: 0% 100%;
+    -ms-transform-origin: 0% 100%;
+    bottom: 13%;
+    left: 20%;
+}
+.home-camel-baby{
+    width: 712px;
+    height: 720px;
+    /*background: url('../images/Camel_Baby/Camel_Baby0001.png') no-repeat center center;*/
+    position:absolute;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
+    
+    transform-origin: 0% 100%;
+    -webkit-transform-origin: 0% 100%;
+    -moz-transform-origin: 0% 100%;
+    -ms-transform-origin: 0% 100%;
+    bottom: 34%;
+    left: 38%;
+}
+.home-sheep{
+    width: 572px;
+    height: 378px;
+    position:absolute;
+    /*background: url('../images/Sheeps/Sheeps0001.png') no-repeat center center;*/
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
+    
+    transform-origin: 0% 100%;
+    -webkit-transform-origin: 0% 100%;
+    -moz-transform-origin: 0% 100%;
+    -ms-transform-origin: 0% 100%;
+    bottom: 10%;
+    left: 35%;
+}
+.home-goat{
+    width: 712px;
+    height: 600px;
+    /*background: url('../images/Goat/Goat0001.png') no-repeat center center;*/
+    position:absolute;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
+    
+    transform-origin: 0% 100%;
+    -webkit-transform-origin: 0% 100%;
+    -moz-transform-origin: 0% 100%;
+    -ms-transform-origin: 0% 100%;
+    bottom: 0%;
+    left: 4.5%;
+}
+.home-goat2{
+    width: 200px;
+    height: 150px;
+    position:absolute;
+    
+    transform-origin: 0% 100%;
+    -webkit-transform-origin: 0% 100%;
+    -moz-transform-origin: 0% 100%;
+    -ms-transform-origin: 0% 100%;
+    bottom: 50%;
+    left: 30%;
+}
+
+.game-canvas{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    transform-origin: 0% 100%;
+    -webkit-transform-origin: 0% 100%;
+    -moz-transform-origin: 0% 100%;
+    -ms-transform-origin: 0% 100%;
+}
+.game-board{
+    width: 1441px;
+    height: 1128px;
+    position: absolute;
+    bottom: -10px;
+    right: 0px;
+    background: url('../images/board_only.png') no-repeat center center;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
+    
+    transform-origin: 100% 100%;
+    -webkit-transform-origin: 100% 100%;
+    -moz-transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+    
+    display: none;
+}
+
+
+/* play board */
+.play-board{
+    width: 960px;
+    height: 640px;
+    position: absolute;
+    bottom: 241px;
+    right: 252px;
+    z-index: 100;
+    display: none;
+}
+.play-board-image-container{
+    width: 960px;
+    height: 640px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+.play-board-image{
+    width: 960px;
+    height: 640px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    opacity: 0.2;
+}
+.play-board-image-container canvas{
+    position: absolute;
+    left: -300px;
+    z-index: 0;
+}
+.home-game-animation{
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    left: 200px;
+    top: 60px;
+    display: none;
+}
+.bird-animation{
+    position: absolute;
+    top: -330px;
+    left: 870px;
+    width: 390px;
+    height: 425px;
+}
+.first-bird{
+    background: url('../images/Bird/Hoopoe_Animation_30001.png') center center no-repeat;
+}
+
+/*-- scene start --*/
+.scene-start{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 100;
+    overflow: hidden;
+}
+.icon-start{
+    width: 300px;
+    height: 300px;
+    background: url('../images/controls/start.png') no-repeat center center;
+    background-size: 100% auto;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -ms-background-size: 100% auto;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    
+    cursor: pointer;
+}
+.button{
+    cursor: pointer;
+}
+.icon-start:active,.button:active{
+    margin-top: 2px;
+}
+
+/*--- play game ---*/
+.blur-screen{
+    position: absolute;
+    background: rgba(255,255,255,0.7);
+    position: absolute;
+    z-index: 1000;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+.blur-hide{
+    display: none;
+}
+.play-button{
+    width: 99px;
+    height: 89px;
+    background: url('../images/controls/play.jpg') no-repeat center center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+.character-voice-button{
+    width: 81px;
+    height: 74px;
+    background: url('../images/controls/none_character_voice.jpg') no-repeat center center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.bgsound-button,.none-bgsound-button{
+    width: 81px;
+    height: 72px;
+    background: url('../images/controls/bg_sound.jpg') no-repeat center center;
+    position: absolute;
+    top: 11px;
+    right: 10px;
+}
+.none-bgsound-button{
+    background: url('../images/controls/none_bg_sound.jpg') no-repeat center center;
+}
+.level-button{
+    width: 100px;
+    height: 100px;
+}
+.level1-button{
+    background: url('../images/controls/level1_icon.png') no-repeat center center;
+    position: absolute;
+    top: 50px;
+    left: 45%;
+    margin-left: -50px;
+}
+.level2-button{
+    background: url('../images/controls/level2_icon.png') no-repeat center center;
+    position: absolute;
+    top: 170px;
+    left: 45%;
+    margin-left: -110px;
+}
+.level3-button{
+    background: url('../images/controls/level3_icon.png') no-repeat center center;
+    position: absolute;
+    top: 170px;
+    left: 45%;
+    margin-left: 10px;
+}
+.level4-button{
+    background: url('../images/controls/level4_icon.png') no-repeat center center;
+    position: absolute;
+    top: 290px;
+    left: 45%;
+    margin-left: -110px;
+}
+.level5-button{
+    background: url('../images/controls/level5_icon.png') no-repeat center center;
+    position: absolute;
+    top: 290px;
+    left: 45%;
+    margin-left: 10px;
+}
+.level-menu-button{
+    width: 41px;
+    height: 38px;
+    background: url('../images/controls/menu_icon.jpg') no-repeat center center;
+    top: 50px;
+    left: 0px;
+    position: absolute;
+}
+.nonactive-level-button{
+    background: url('../images/controls/unactive_level.png') no-repeat center center;
+}
+.letter-item{
+    width: 100px;
+    height: 67px;
+    float: left;
+    margin: 10px;
+}
+.letter-item.button:active{
+    margin-top: 10px;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+}
+.game-letter-list-container{
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    right: 100px;
+    bottom: 0px;
+}
+.text-point{
+    width: 211px;
+    height: 67px;
+    background: url('../images/controls/point.png') no-repeat center center;
+    position: absolute;
+    bottom: 13px;
+    left: 5px;
+    z-index: 10;
+}
+.finish-star{
+    width: 165px;
+    height: 155px;
+    background: url('../images/controls/star.png') no-repeat center center;
+    position: absolute;
+    top: 20px;
+    left: 45%;
+    margin-left: -82px;
+}
+.finish-text{
+    width: 325px;
+    height: 64px;
+    background: url('../images/controls/text.png') no-repeat center center;
+    position: absolute;
+    top: 200px;
+    left: 45%;
+    margin-left: -162px;
+}
+.finish-replay{
+    width: 99px;
+    height: 90px;
+    background: url('../images/controls/replay.jpg') no-repeat center center;
+    position: absolute;
+    top: 270px;
+    left: 45%;
+    margin-left: -49px;
+}
+.finish-menu{
+    width: 99px;
+    height: 93px;
+    background: url('../images/controls/menu_win.jpg') no-repeat center center;
+    position: absolute;
+    top: 270px;
+    left:45%;
+    margin-left: -165px;
+}
+.finish-next-level{
+    width: 99px;
+    height: 88px;
+    background: url('../images/controls/next_level.jpg') no-repeat center center;
+    position: absolute;
+    top: 270px;
+    left: 45%;
+    margin-left: 65px;
+}
+.point-star{
+    width: 65px;
+    height: 61px;
+    background: url('../images/controls/star.png') no-repeat center center;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
+    position: absolute;
+    left: 10px;
+}
+
+/* keyframe animation */
+@-webkit-keyframes star-animation {
+  0%   { 
+  	transform: scale(0);
+	-webkit-transform: scale(0);
+	-moz-transform: scale(0);
+	-ms-transform: scale(0); 
+  }
+  20% { 
+  	transform: scale(1.2);
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-ms-transform: scale(1.2); 
+  }
+  40%{
+  	transform: scale(0.8);
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	-ms-transform: scale(0.8);
+  }
+  60%{
+  	transform: scale(0.2);
+	-webkit-transform: scale(0.2);
+	-moz-transform: scale(0.2);
+	-ms-transform: scale(0.2);
+  }
+  80%{
+  	transform: scale(0.9);
+	-webkit-transform: scale(0.9);
+	-moz-transform: scale(0.9);
+	-ms-transform: scale(0.9);
+  }
+  100%{
+  	transform: scale(1);
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1); 
+  }
+}
+@-moz-keyframes star-animation {
+  0%   { 
+  	transform: scale(0);
+	-webkit-transform: scale(0);
+	-moz-transform: scale(0);
+	-ms-transform: scale(0); 
+  }
+  20% { 
+  	transform: scale(1.2);
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-ms-transform: scale(1.2); 
+  }
+  40%{
+  	transform: scale(0.8);
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	-ms-transform: scale(0.8);
+  }
+  60%{
+  	transform: scale(0.2);
+	-webkit-transform: scale(0.2);
+	-moz-transform: scale(0.2);
+	-ms-transform: scale(0.2);
+  }
+  80%{
+  	transform: scale(0.9);
+	-webkit-transform: scale(0.9);
+	-moz-transform: scale(0.9);
+	-ms-transform: scale(0.9);
+  }
+  100%{
+  	transform: scale(1);
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1); 
+  }
+}
+@-o-keyframes star-animation {
+  0%   { 
+  	transform: scale(0);
+	-webkit-transform: scale(0);
+	-moz-transform: scale(0);
+	-ms-transform: scale(0); 
+  }
+  20% { 
+  	transform: scale(1.2);
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-ms-transform: scale(1.2); 
+  }
+  40%{
+  	transform: scale(0.8);
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	-ms-transform: scale(0.8);
+  }
+  60%{
+  	transform: scale(0.2);
+	-webkit-transform: scale(0.2);
+	-moz-transform: scale(0.2);
+	-ms-transform: scale(0.2);
+  }
+  80%{
+  	transform: scale(0.9);
+	-webkit-transform: scale(0.9);
+	-moz-transform: scale(0.9);
+	-ms-transform: scale(0.9);
+  }
+  100%{
+  	transform: scale(1);
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1); 
+  }
+}
+@keyframes star-animation {
+  0%   { 
+  	transform: scale(0);
+	-webkit-transform: scale(0);
+	-moz-transform: scale(0);
+	-ms-transform: scale(0); 
+  }
+  20% { 
+  	transform: scale(1.2);
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-ms-transform: scale(1.2); 
+  }
+  40%{
+  	transform: scale(0.8);
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	-ms-transform: scale(0.8);
+  }
+  60%{
+  	transform: scale(0.2);
+	-webkit-transform: scale(0.2);
+	-moz-transform: scale(0.2);
+	-ms-transform: scale(0.2);
+  }
+  80%{
+  	transform: scale(0.9);
+	-webkit-transform: scale(0.9);
+	-moz-transform: scale(0.9);
+	-ms-transform: scale(0.9);
+  }
+  100%{
+  	transform: scale(1);
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1); 
+  }
+}
+.point-star.active,.finish-star.active{
+    -webkit-animation: star-animation 0.5s forwards; /* Safari 4+ */
+    -moz-animation:    star-animation 0.5s forwards; /* Fx 5+ */
+    -o-animation:      star-animation 0.5s forwards; /* Opera 12+ */
+    animation:         star-animation 0.5s forwards; /* IE 10+, Fx 29+ */
+}
