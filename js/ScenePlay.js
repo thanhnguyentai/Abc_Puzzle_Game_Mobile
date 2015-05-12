@@ -4,6 +4,9 @@ ScenePlay = {
         $('#playButton').bind('click', function(){
             _self.hideStartScreen();
             _self.showLevelScreen();
+
+            if(_self.enableSoundBG)
+                _self.audioBG.play();
         });
         this.enableSoundBG = true;
         this.audioBG = new buzz.sound(GameData.baseUrl+'bg_sound/bg_sound', {
@@ -11,7 +14,6 @@ ScenePlay = {
             preload: true,
             loop: true
         });
-        this.audioBG.play();
         
         $('#bgSoundButton').bind('click', function(){ 
             if(_self.enableSoundBG){
@@ -104,17 +106,6 @@ ScenePlay = {
             });
         }
         
-        var paramLetter = this.getUrlVars()['letter'];
-        var paramIndex = 0;
-        if(paramLetter && paramLetter.length > 0){
-            for(var i=0;i<GameData.letter.length;i++){
-                if(paramLetter.toLowerCase() === GameData.letter[i].letter.toLowerCase()){
-                    paramIndex = i;
-                    break;
-                }
-            }
-        }
-        
         this.currentIndex = 0; // change this value for default letter
         this.currentLetter = GameData.letter[this.currentIndex].letter;
         this.currentLevel = 1;
@@ -128,16 +119,6 @@ ScenePlay = {
             formats: ['m4a','mp3','ogg'],
             preload: true
         });
-    },
-    
-    getUrlVars: function(){
-        var vars = {}, hash;
-        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-        for(var i = 0; i < hashes.length; i++){
-            hash = hashes[i].split('=');
-            vars[hash[0]] = hash[1];
-        }
-        return vars;
     },
     
     showLevelScreen: function(){
@@ -407,8 +388,9 @@ ScenePlay = {
                                });
                                
                                _self.numberPartDone++;
-                               _self.playRightAudio();
-                               _self.checkFinishLetter();
+                               if(!_self.checkFinishLetter()){
+                                    _self.playRightAudio();
+                               }
                             }
                         }
                     });
@@ -443,12 +425,17 @@ ScenePlay = {
     checkFinishLetter: function(){
         if(GameData['level'+this.currentLevel].numberPart === this.numberPartDone){
             var _self = this;
+            _self.playWordAudio();
+            SceneHome.playBirdAnimation();
             SceneHome.playAnimationEnd(function(){
+                /*
                 var timeout = setTimeout(function(){
                     clearTimeout(timeout);
                     _self.playWordAudio();
                     SceneHome.playBirdAnimation();
                 }, 500);
+                */
+
                 var timeout1 = setTimeout(function(){
                     clearTimeout(timeout1);
                     if(_self.currentLevel === _self.level[_self.currentIndex].level){
@@ -461,6 +448,10 @@ ScenePlay = {
                     _self.showFinishScreen();
                 }, 3000); 
             });
+
+            return true;
         }
+
+        return false;
     }
 };

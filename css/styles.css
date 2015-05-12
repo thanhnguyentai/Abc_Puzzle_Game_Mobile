@@ -21,7 +21,7 @@ body{
 /*  Loading  */
 .loading-container{
     width: 60%;
-    height: 30px;
+    height: 20px;
     background: #ccc;
     border: 1px solid #fff;
     border-radius: 15px;
@@ -40,7 +40,7 @@ body{
     display: none;
 }
 .loading-running{
-    height: 30px;
+    height: 20px;
     width: 0%;
     border-radius: 15px 0 0 15px;
     -webkit-border-radius: 15px 0 0 15px;
@@ -54,7 +54,7 @@ body{
 
 /* Scene Splash */
 .scene-splash{
-    display: none;
+    display: block;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -119,119 +119,20 @@ body{
     -moz-transform-origin: 0% 100%;
     -ms-transform-origin: 0% 100%;
 }
-.home-house{
-    width: 624px;
-    height: 645px;
-    position: absolute;
-    bottom: 39%;
-    left: 2.7%;
-    background: url('../images/house2.png') no-repeat center center;
-    background-size: 100% 100%;
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -ms-background-size: 100% 100%;
-    
-    transform-origin: 0% 100%;
-    -webkit-transform-origin: 0% 100%;
-    -moz-transform-origin: 0% 100%;
-    -ms-transform-origin: 0% 100%;
-}
+
 .home-woman-baby{
-    width: 712px;
-    height: 833px;
-    /*background: url('../images/Woman_with_baby/Woman_baby0001.png') no-repeat center center;*/
+    width: 250px;
+    height: 400px;
     position:absolute;
-    background-size: 100% 100%;
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -ms-background-size: 100% 100%;
-    
-    transform-origin: 0% 100%;
-    -webkit-transform-origin: 0% 100%;
-    -moz-transform-origin: 0% 100%;
-    -ms-transform-origin: 0% 100%;
     bottom: 15.42%;
     left: 0px;
 }
-.home-woman-utensil{
-    width: 712px;
-    height: 720px;
-    /*background: url('../images/Woman_Utensils/Woman_Utensils0001.png') no-repeat center center;*/
-    position:absolute;
-    background-size: 100% 100%;
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -ms-background-size: 100% 100%;
-    
-    transform-origin: 0% 100%;
-    -webkit-transform-origin: 0% 100%;
-    -moz-transform-origin: 0% 100%;
-    -ms-transform-origin: 0% 100%;
-    bottom: 13%;
-    left: 20%;
-}
 .home-camel-baby{
-    width: 712px;
-    height: 720px;
-    /*background: url('../images/Camel_Baby/Camel_Baby0001.png') no-repeat center center;*/
+    width: 150px;
+    height: 100px;
     position:absolute;
-    background-size: 100% 100%;
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -ms-background-size: 100% 100%;
-    
-    transform-origin: 0% 100%;
-    -webkit-transform-origin: 0% 100%;
-    -moz-transform-origin: 0% 100%;
-    -ms-transform-origin: 0% 100%;
     bottom: 34%;
     left: 38%;
-}
-.home-sheep{
-    width: 572px;
-    height: 378px;
-    position:absolute;
-    /*background: url('../images/Sheeps/Sheeps0001.png') no-repeat center center;*/
-    background-size: 100% 100%;
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -ms-background-size: 100% 100%;
-    
-    transform-origin: 0% 100%;
-    -webkit-transform-origin: 0% 100%;
-    -moz-transform-origin: 0% 100%;
-    -ms-transform-origin: 0% 100%;
-    bottom: 10%;
-    left: 35%;
-}
-.home-goat{
-    width: 712px;
-    height: 600px;
-    /*background: url('../images/Goat/Goat0001.png') no-repeat center center;*/
-    position:absolute;
-    background-size: 100% 100%;
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -ms-background-size: 100% 100%;
-    
-    transform-origin: 0% 100%;
-    -webkit-transform-origin: 0% 100%;
-    -moz-transform-origin: 0% 100%;
-    -ms-transform-origin: 0% 100%;
-    bottom: 0%;
-    left: 4.5%;
-}
-.home-goat2{
-    width: 200px;
-    height: 150px;
-    position:absolute;
-    
-    transform-origin: 0% 100%;
-    -webkit-transform-origin: 0% 100%;
-    -moz-transform-origin: 0% 100%;
-    -ms-transform-origin: 0% 100%;
-    bottom: 50%;
-    left: 30%;
 }
 
 .game-canvas{
@@ -384,65 +285,77 @@ body{
     right: 10px;
 }
 .bgsound-button,.none-bgsound-button{
-    width: 81px;
-    height: 72px;
+    width: 40px;
+    height: 36px;
     background: url('../images/controls/bg_sound.jpg') no-repeat center center;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
     position: absolute;
-    top: 11px;
-    right: 10px;
+    top: 5px;
+    right: 5px;
 }
 .none-bgsound-button{
     background: url('../images/controls/none_bg_sound.jpg') no-repeat center center;
-}
-.level-button{
-    width: 100px;
-    height: 100px;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
 }
 .level1-button{
     background: url('../images/controls/level1_icon.png') no-repeat center center;
     position: absolute;
     top: 50px;
     left: 45%;
-    margin-left: -50px;
+    margin-left: -25px;
 }
 .level2-button{
     background: url('../images/controls/level2_icon.png') no-repeat center center;
     position: absolute;
-    top: 170px;
+    top: 110px;
     left: 45%;
-    margin-left: -110px;
+    margin-left: -60px;
 }
 .level3-button{
     background: url('../images/controls/level3_icon.png') no-repeat center center;
     position: absolute;
-    top: 170px;
+    top: 110px;
     left: 45%;
     margin-left: 10px;
 }
 .level4-button{
     background: url('../images/controls/level4_icon.png') no-repeat center center;
     position: absolute;
-    top: 290px;
+    top: 170px;
     left: 45%;
-    margin-left: -110px;
+    margin-left: -60px;
 }
 .level5-button{
     background: url('../images/controls/level5_icon.png') no-repeat center center;
     position: absolute;
-    top: 290px;
+    top: 170px;
     left: 45%;
     margin-left: 10px;
+}
+.nonactive-level-button{
+    background: url('../images/controls/unactive_level.png') no-repeat center center;
+}
+.level-button{
+    width: 50px;
+    height: 50px;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
 }
 .level-menu-button{
     width: 41px;
     height: 38px;
     background: url('../images/controls/menu_icon.jpg') no-repeat center center;
-    top: 50px;
+    top: 5px;
     left: 0px;
     position: absolute;
-}
-.nonactive-level-button{
-    background: url('../images/controls/unactive_level.png') no-repeat center center;
 }
 .letter-item{
     width: 100px;
@@ -465,22 +378,31 @@ body{
     bottom: 0px;
 }
 .text-point{
-    width: 211px;
-    height: 67px;
+    width: 70px;
+    height: 22px;
     background: url('../images/controls/point.png') no-repeat center center;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
+
     position: absolute;
     bottom: 13px;
     left: 5px;
     z-index: 10;
 }
 .finish-star{
-    width: 165px;
-    height: 155px;
+    width: 80px;
+    height: 70px;
     background: url('../images/controls/star.png') no-repeat center center;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
     position: absolute;
     top: 20px;
     left: 45%;
-    margin-left: -82px;
+    margin-left: -40px;
 }
 .finish-text{
     width: 325px;
