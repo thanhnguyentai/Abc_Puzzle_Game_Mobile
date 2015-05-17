@@ -408,9 +408,9 @@ ScenePlay = {
     },
     
     addPointStar: function(){
-        var height = 63;
+        var height = 29;
         var margin = 10;
-        var bottom = 80;
+        var bottom = 35;
         for(var i=0;i<this.numberPoint;i++){
             bottom += height + margin;
         }

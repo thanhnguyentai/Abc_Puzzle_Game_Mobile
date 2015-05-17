@@ -45,22 +45,26 @@
                 <div id="gameLevelScreen" class="blur-screen blur-hide">
                     <div id="levelMenuButton" class="button level-menu-button" style="display: none;">
                     </div>
-                    <div id="level1Button" class="button level1-button level-button"></div>
-                    <div id="level2Button" class="button level2-button nonactive-level-button level-button"></div>
-                    <div id="level3Button" class="button level3-button nonactive-level-button level-button"></div>
-                    <div id="level4Button" class="button level4-button nonactive-level-button level-button"></div>
-                    <div id="level5Button" class="button level5-button nonactive-level-button level-button"></div>
+                    <div class="container-list-level">
+                        <div id="level1Button" class="button level1-button level-button"></div>
+                        <div id="level2Button" class="button level2-button nonactive-level-button level-button"></div>
+                        <div id="level3Button" class="button level3-button nonactive-level-button level-button"></div>
+                        <div id="level4Button" class="button level4-button nonactive-level-button level-button"></div>
+                        <div id="level5Button" class="button level5-button nonactive-level-button level-button"></div>
+                    </div>
                 </div>
                 <div id="gameLetterList" class="blur-hide blur-screen">
                     <div id="gameLetterListContainer" class="game-letter-list-container">
                     </div>
                 </div>
                 <div id="gameFinishScreen" class="blur-screen blur-hide">
-                    <div id="finishStar" class="finish-star"></div>
-                    <div id="finishText" class="finish-text"></div>
-                    <div id="finishMenu" class="finish-menu button"></div>
-                    <div id="finishReplay" class="finish-replay button"></div>
-                    <div id="finishNextLevel" class="finish-next-level button"></div>
+                    <div class="finishscreen-container">
+                        <div id="finishStar" class="finish-star"></div>
+                        <div id="finishText" class="finish-text"></div>
+                        <div id="finishMenu" class="finish-menu button"></div>
+                        <div id="finishReplay" class="finish-replay button"></div>
+                        <div id="finishNextLevel" class="finish-next-level button"></div>
+                    </div>
                 </div>
                 
                 <div id="levelMenuButton2" class="button level-menu-button">
@@ -70,9 +74,9 @@
                 <div id="bgSoundButton2" class="button bgsound-button">
                 </div>
                 
-                <canvas id="homeWomanBaby" class="home-woman-baby resize-item" width="250" height="400">
+                <canvas id="homeWomanBaby" class="home-woman-baby resize-item" data-ratio="1.5" width="250" height="400">
                 </canvas>
-                <canvas id="homeCamelBaby" class="home-camel-baby resize-item" width="150" height="100">
+                <canvas id="homeCamelBaby" class="home-camel-baby resize-item" data-ratio="1.5" width="150" height="100">
                 </canvas>
                 
                 <div id="gameBoard"  class="game-board resize-item">

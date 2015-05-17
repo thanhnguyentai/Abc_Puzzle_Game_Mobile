@@ -126,6 +126,11 @@ body{
     position:absolute;
     bottom: 15.42%;
     left: 0px;
+
+    transform-origin: 50% 100%;
+    -webkit-transform-origin: 50% 100%;
+    -moz-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
 }
 .home-camel-baby{
     width: 150px;
@@ -265,9 +270,13 @@ body{
     display: none;
 }
 .play-button{
-    width: 99px;
-    height: 89px;
+    width: 50px;
+    height: 45px;
     background: url('../images/controls/play.jpg') no-repeat center center;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -303,40 +312,43 @@ body{
     -moz-background-size: 100% 100%;
     -ms-background-size: 100% 100%;
 }
+
+.container-list-level {
+    width: 130px;
+    height: 170px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
 .level1-button{
     background: url('../images/controls/level1_icon.png') no-repeat center center;
-    position: absolute;
-    top: 50px;
-    left: 45%;
+    top: 0px;
+    left: 50%;
     margin-left: -25px;
 }
 .level2-button{
     background: url('../images/controls/level2_icon.png') no-repeat center center;
-    position: absolute;
-    top: 110px;
-    left: 45%;
-    margin-left: -60px;
+    top: 60px;
+    left: 0px;
 }
 .level3-button{
     background: url('../images/controls/level3_icon.png') no-repeat center center;
-    position: absolute;
-    top: 110px;
-    left: 45%;
-    margin-left: 10px;
+    top: 60px;
+    right: 0px;
 }
 .level4-button{
     background: url('../images/controls/level4_icon.png') no-repeat center center;
-    position: absolute;
-    top: 170px;
-    left: 45%;
-    margin-left: -60px;
+    top: 120px;
+    left: 0px;
 }
 .level5-button{
     background: url('../images/controls/level5_icon.png') no-repeat center center;
-    position: absolute;
-    top: 170px;
-    left: 45%;
-    margin-left: 10px;
+    top: 120px;
+    right: 0px;
 }
 .nonactive-level-button{
     background: url('../images/controls/unactive_level.png') no-repeat center center;
@@ -344,6 +356,7 @@ body{
 .level-button{
     width: 50px;
     height: 50px;
+    position: absolute;
     background-size: 100% 100%;
     -webkit-background-size: 100% 100%;
     -moz-background-size: 100% 100%;
@@ -391,6 +404,17 @@ body{
     left: 5px;
     z-index: 10;
 }
+.finishscreen-container{
+    position: absolute;
+    width: 170px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
 .finish-star{
     width: 80px;
     height: 70px;
@@ -400,49 +424,62 @@ body{
     -moz-background-size: 100% 100%;
     -ms-background-size: 100% 100%;
     position: absolute;
-    top: 20px;
-    left: 45%;
+    top: 0px;
+    left: 50%;
     margin-left: -40px;
 }
 .finish-text{
-    width: 325px;
-    height: 64px;
+    width: 160px;
+    height: 32px;
     background: url('../images/controls/text.png') no-repeat center center;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
     position: absolute;
-    top: 200px;
-    left: 45%;
-    margin-left: -162px;
-}
-.finish-replay{
-    width: 99px;
-    height: 90px;
-    background: url('../images/controls/replay.jpg') no-repeat center center;
-    position: absolute;
-    top: 270px;
-    left: 45%;
-    margin-left: -49px;
+    top: 90px;
+    left: 50%;
+    margin-left: -80px;
 }
 .finish-menu{
-    width: 99px;
-    height: 93px;
+    width: 50px;
+    height: 47px;
     background: url('../images/controls/menu_win.jpg') no-repeat center center;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
     position: absolute;
-    top: 270px;
-    left:45%;
-    margin-left: -165px;
+    top: 140px;
+    left: 0px;
+}
+.finish-replay{
+    width: 50px;
+    height: 45px;
+    background: url('../images/controls/replay.jpg') no-repeat center center;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
+    position: absolute;
+    top: 140px;
+    left: 60px;
 }
 .finish-next-level{
-    width: 99px;
-    height: 88px;
+    width: 50px;
+    height: 44px;
     background: url('../images/controls/next_level.jpg') no-repeat center center;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
     position: absolute;
-    top: 270px;
-    left: 45%;
-    margin-left: 65px;
+    top: 140px;
+    right: 0px;
 }
 .point-star{
-    width: 65px;
-    height: 61px;
+    width: 30px;
+    height: 29px;
     background: url('../images/controls/star.png') no-repeat center center;
     background-size: 100% 100%;
     -webkit-background-size: 100% 100%;

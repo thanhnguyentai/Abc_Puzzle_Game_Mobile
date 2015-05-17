@@ -154,11 +154,23 @@ SceneHome = {
         
         this.windowWidth = windowW;
         this.ratio = ratio;
-        
-        $('.resize-item').css('transform', 'scale(' + ratio + ')');
-        $('.resize-item').css('-webkit-transform', 'scale(' + ratio + ')');
-        $('.resize-item').css('-ms-transform', 'scale(' + ratio + ')');
-        $('.resize-item').css('-moz-transform', 'scale(' + ratio + ')');
+
+        var listResizes = $('.resize-item');
+        for(var i=0;i<listResizes.length;i++){
+            if(listResizes.eq(i).attr('data-ratio')){
+                var  itemRatio = parseFloat(listResizes.eq(i).attr('data-ratio'));
+                listResizes.eq(i).css('transform', 'scale(' + (ratio*itemRatio) + ')');
+                listResizes.eq(i).css('-webkit-transform', 'scale(' + (ratio*itemRatio) + ')');
+                listResizes.eq(i).css('-ms-transform', 'scale(' + (ratio*itemRatio) + ')');
+                listResizes.eq(i).css('-moz-transform', 'scale(' + (ratio*itemRatio) + ')');
+            }
+            else{
+                listResizes.eq(i).css('transform', 'scale(' + ratio + ')');
+                listResizes.eq(i).css('-webkit-transform', 'scale(' + ratio + ')');
+                listResizes.eq(i).css('-ms-transform', 'scale(' + ratio + ')');
+                listResizes.eq(i).css('-moz-transform', 'scale(' + ratio + ')');
+            }
+        }
     },
     
     playAnimationEnd: function(callback){
