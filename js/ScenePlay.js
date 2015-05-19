@@ -84,10 +84,12 @@ ScenePlay = {
         });
         
         // generate list letters
+        
         this.level = new Array();
         var item = "";
         var url = "";
         for(var i=0;i<GameData.letter.length;i++){
+            /*
             url = GameData.baseUrl+GameData.level1.directory+'/'+GameData.letter[i].letter+'/'+GameData.letter[i].word+'.png';
             item = "<div onmouseover=\"ScenePlay.hoverLetter('"+GameData.letter[i].letter+"')\" onclick=\"ScenePlay.selectLetter('"+GameData.letter[i].letter+"')\" class='letter-item button' style='background: url("+url+") no-repeat center center; \n\
                             background-size: 100% 100%;\n\
@@ -95,14 +97,17 @@ ScenePlay = {
                             -moz-background-size: 100% 100%;\n\
                             -ms-background-size: 100% 100%;'>" + "</div>";
             $('#gameLetterListContainer').append(item);
+            */
             
             this.level.push({
                 letter: GameData.letter[i].letter,
-                level: 1,
+                level: 1
+                /*
                 audioletter: new buzz.sound(GameData.baseUrl+GameData.level1.directory+'/'+GameData.letter[i].letter+'/'+GameData.letter[i].letter, {
                     formats: ['m4a','mp3','ogg'],
                     preload: true
                 })
+                */
             });
         }
         
