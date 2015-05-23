@@ -1,5 +1,21 @@
 GameData = {
+    isAndroid: false,
+    isIOS: false,
+    linkGooglePlay: 'https://play.google.com/store/apps/developer?id=afkiihooyo',
+    linkAppleStore: '',
+    linkWebsite: 'http://afkiihooyo.com',
+    linkFacebook: 'https://www.facebook.com/pages/Afkeeniihooyo/438260362989462',
+
     baseUrl: 'images/GameData/',
+
+    getBaseUrlAudio: function(){
+        if(this.isAndroid){
+            return "/android_asset/www/"+this.baseUrl;
+        }
+        else{
+            return this.baseUrl;
+        }
+    },
     letter: new Array(),
     level1: {
         directory: 'LEVEL_1',
@@ -31,7 +47,8 @@ GameData = {
         this.letter.push({
             letter: 'B',
             word: 'Cat',
-            audio: 'B BISAD'
+            audio: 'B BISAD',
+            isSelected: true
         });
         this.letter.push({
             letter: 'C',

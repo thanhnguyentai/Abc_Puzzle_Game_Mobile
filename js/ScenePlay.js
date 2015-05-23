@@ -1,18 +1,29 @@
 ScenePlay = {
     init: function(){
         var _self = this;
+        this.enableSoundBG = true;
+
+        if(GameData.isAndroid){
+            this.audioBG = new Media(GameData.getBaseUrlAudio()+'bg_sound/bg_sound.m4a', null, null, function(status){
+                if (status === Media.MEDIA_STOPPED && _self.enableSoundBG) {
+                    _self.audioBG.play();
+                }
+            });
+
+            this.audioBG.play();
+        }
+        else{
+            this.audioBG = new buzz.sound(GameData.getBaseUrlAudio()+'bg_sound/bg_sound', {
+                formats: ['m4a','mp3','ogg'],
+                preload: true,
+                loop: true
+            });
+            this.audioBG.play();
+        }
+        
         $('#playButton').bind('click', function(){
             _self.hideStartScreen();
             _self.showLevelScreen();
-
-            if(_self.enableSoundBG)
-                _self.audioBG.play();
-        });
-        this.enableSoundBG = true;
-        this.audioBG = new buzz.sound(GameData.baseUrl+'bg_sound/bg_sound', {
-            formats: ['m4a','mp3','ogg'],
-            preload: true,
-            loop: true
         });
         
         $('#bgSoundButton').bind('click', function(){ 
@@ -63,67 +74,88 @@ ScenePlay = {
             _self.showListLetter();
         });
         $('#levelMenuButton2').bind('click', function(){
-           //_self.showListLetter();
            _self.showLevelScreen();
         });
         $('#finishMenu').bind('click', function(){
-            _self.hideFinishScreen();
-            //_self.showListLetter();
-            _self.showLevelScreen();
+            if(_self.currentLevel < 5){
+                _self.hideFinishScreen();
+                _self.showLevelScreen();
+            }
+            else{
+                if(GameData.isAndroid){
+                    _self.openWeb(GameData.linkGooglePlay);
+                }
+                else if(GameData.isIOS){
+                    _self.openWeb(GameData.linkAppleStore);
+                }
+            }
         });
         $('#finishReplay').bind('click', function(){
             _self.hideFinishScreen();
             _self.start();
         });
         $('#finishNextLevel').bind('click', function(){
-            _self.hideFinishScreen() ;
-            _self.currentLevel++;
-            if(_self.currentLevel <=5){
-                _self.start();
+            if(_self.currentLevel < 5){
+                _self.hideFinishScreen() ;
+                _self.currentLevel++;
+                if(_self.currentLevel <=5){
+                    _self.start();
+                }
             }
+            else{
+                _self.openWeb(GameData.linkWebsite)
+            }
+        });
+        $('#finishFacebook').bind("click", function(){
+            _self.openWeb(GameData.linkFacebook)
         });
         
         // generate list letters
-        
         this.level = new Array();
         var item = "";
         var url = "";
         for(var i=0;i<GameData.letter.length;i++){
-            /*
-            url = GameData.baseUrl+GameData.level1.directory+'/'+GameData.letter[i].letter+'/'+GameData.letter[i].word+'.png';
-            item = "<div onmouseover=\"ScenePlay.hoverLetter('"+GameData.letter[i].letter+"')\" onclick=\"ScenePlay.selectLetter('"+GameData.letter[i].letter+"')\" class='letter-item button' style='background: url("+url+") no-repeat center center; \n\
-                            background-size: 100% 100%;\n\
-                            -webkit-background-size: 100% 100%;\n\
-                            -moz-background-size: 100% 100%;\n\
-                            -ms-background-size: 100% 100%;'>" + "</div>";
-            $('#gameLetterListContainer').append(item);
-            */
-            
             this.level.push({
                 letter: GameData.letter[i].letter,
                 level: 1
-                /*
-                audioletter: new buzz.sound(GameData.baseUrl+GameData.level1.directory+'/'+GameData.letter[i].letter+'/'+GameData.letter[i].letter, {
-                    formats: ['m4a','mp3','ogg'],
-                    preload: true
-                })
-                */
             });
         }
         
-        this.currentIndex = 0; // change this value for default letter
+        this.currentIndex = 0;
+        for(var i=0;i<GameData.letter.length;i++){
+            if(GameData.letter[i].isSelected){
+                this.currentIndex = i;
+                break;
+            }
+        }
         this.currentLetter = GameData.letter[this.currentIndex].letter;
         this.currentLevel = 1;
         this.numberPoint = 0;
         
-        this.audioTing = new buzz.sound('audio/ting', {
-            formats: ['m4a','mp3','ogg'],
-            preload: true
-        });
-        this.audioWord = new buzz.sound(GameData.baseUrl+GameData.level1.directory+'/'+GameData.letter[this.currentIndex].letter+'/'+GameData.letter[this.currentIndex].audio, {
-            formats: ['m4a','mp3','ogg'],
-            preload: true
-        });
+        if(GameData.isAndroid){
+            this.audioTing = new Media(GameData.getBaseUrlAudio()+'action/ting.m4a');
+        }
+        else{
+            this.audioTing = new buzz.sound(GameData.getBaseUrlAudio()+'action/ting', {
+                formats: ['m4a','mp3','ogg'],
+                preload: true
+            });
+        }
+        
+        
+        if(GameData.isAndroid){
+            this.audioWord = new Media(GameData.getBaseUrlAudio()+GameData.level1.directory+'/'+GameData.letter[this.currentIndex].letter+'/'+GameData.letter[this.currentIndex].audio+'.m4a');
+        }
+        else{
+            this.audioWord = new buzz.sound(GameData.getBaseUrlAudio()+GameData.level1.directory+'/'+GameData.letter[this.currentIndex].letter+'/'+GameData.letter[this.currentIndex].audio, {
+                formats: ['m4a','mp3','ogg'],
+                preload: true
+            });
+        }
+    },
+
+    openWeb: function(link){
+        window.open(link,"_system");
     },
     
     showLevelScreen: function(){
@@ -152,6 +184,10 @@ ScenePlay = {
         $('#gameLetterList').fadeOut(200);
     },
     showFinishScreen: function(){
+        if(this.currentLevel >=5){
+            $('#finishFacebook').css('display','block');
+        }
+
         $('#gameFinishScreen').fadeIn(500, function(){
             $('#finishStar').addClass('active');
             setTimeout(function(){
@@ -170,34 +206,6 @@ ScenePlay = {
                 return;
             }
         }
-    },
-    selectLetter: function(letter){
-        this.currentLetter = letter;
-        this.numberPoint = 0;
-        $('.point-star').remove();
-        var currentLevel = 1;
-        for(var i=0;i<this.level.length;i++){
-            if(this.currentLetter === this.level[i].letter){
-                currentLevel = this.level[i].level;
-                this.currentIndex = i;
-                break;
-            }
-        }
-        
-        this.currentLevel = currentLevel;
-        this.audioWord = new buzz.sound(GameData.baseUrl+GameData.level1.directory+'/'+GameData.letter[this.currentIndex].letter+'/'+GameData.letter[this.currentIndex].audio, {
-            formats: ['m4a','mp3','ogg'],
-            preload: true
-        });
-        for(var i=1;i<=currentLevel;i++){
-            $('#level'+i+'Button').removeClass('nonactive-level-button');
-        }
-        for(var i=currentLevel+1;i<=5;i++){
-            $('#level'+i+'Button').addClass('nonactive-level-button');
-        }
-        
-        this.hideListLetter();
-        this.showLevelScreen();
     },
     
     selectLevel: function(level){
